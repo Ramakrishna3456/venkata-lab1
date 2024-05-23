@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "author": "Venkata Ramakrishna Bairraju",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 44.85,
+      "left": -130.8,
+      "attrs": { "env": "micropython-20231227-v1.22.0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 66.6,
+      "left": 89.4,
+      "rotate": 90,
+      "attrs": { "color": "white" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 63.8,
+      "left": 182.4,
+      "rotate": 90,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": 63.8,
+      "left": 268.8,
+      "rotate": 90,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn4",
+      "top": 63.8,
+      "left": 355.2,
+      "rotate": 90,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 117.6,
+      "left": -286.2,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-led-ring",
+      "id": "ring1",
+      "top": -124.16,
+      "left": -344.41,
+      "attrs": { "pixels": "16" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -185.6,
+      "left": 82.4,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "lcd1:GND", "pico:GND.8", "black", [ "h-105.6", "v19.2", "h0", "v-9.6" ] ],
+    [ "lcd1:VCC", "pico:VBUS", "red", [ "h-96", "v9.7", "h0", "v192", "h0", "v0", "h0" ] ],
+    [ "lcd1:SDA", "pico:GP0", "green", [ "h-76.8", "v38.6", "h0", "v0", "h-172.8", "v76.8" ] ],
+    [ "lcd1:SCL", "pico:GP1", "green", [ "h-67.2", "v48.3", "h-172.8", "v144" ] ],
+    [ "ring1:GND", "pico:GND.1", "black", [ "v48", "h0", "v0" ] ],
+    [ "ring1:VCC", "pico:VBUS", "red", [ "v9.6", "h192", "v0", "h28.8", "v0" ] ],
+    [ "ring1:DIN", "pico:GP2", "green", [ "v57.6", "h144" ] ],
+    [ "pico:GP21", "btn1:2.r", "white", [ "h174", "v-57.6" ] ],
+    [ "btn2:2.r", "pico:GP20", "red", [ "v70.2", "h-266" ] ],
+    [ "pico:GP20", "pico:GP21", "green", [ "h0" ] ],
+    [ "btn3:2.r", "pico:GP19", "yellow", [ "v79.8", "h-352.4" ] ],
+    [ "btn4:2.r", "pico:GP18", "blue", [ "v89.4", "h-438.8" ] ],
+    [ "btn1:1.r", "pico:GND.5", "black", [ "v0" ] ],
+    [ "bz1:1", "pico:GND.4", "black", [ "v0" ] ],
+    [ "bz1:2", "pico:GP17", "green", [ "v57.6", "h220.4", "v0", "h0", "v-28.8", "h0" ] ],
+    [ "btn2:1.r", "pico:GND.5", "black", [ "v99", "h-285" ] ],
+    [ "btn3:1.r", "pico:GND.5", "black", [ "v99", "h-371.4" ] ],
+    [ "btn4:1.r", "pico:GND.5", "black", [ "v99", "h-457.8" ] ]
+  ],
+  "dependencies": {}
+}
